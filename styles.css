@@ -2,6 +2,11 @@ body{
     margin: 0;
 }
 
+html{
+    font-family: 'Press Start 2P', cursive;
+
+}
+
 .full-board{
     background-color: black;
     width: 800px;
@@ -25,7 +30,7 @@ body{
     position: absolute;
 }
 
-.ball{
+#ball{
     background-color: white;
     width: 10px;
     height: 10px;
