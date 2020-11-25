@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+}
+
+.full-board{
+    background-color: black;
+    width: 800px;
+    height: 600px;
+    position: absolute;
+}
+
+.game-board{
+    background-color: black;
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    left: 50px;
+}
+
+.player{
+    background: white;
+    width: 10px;
+    height: 100px;
+    position: absolute;
+}
+
+.ball{
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+}
