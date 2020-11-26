@@ -2,6 +2,13 @@
 
 const p1 = document.getElementById("playerOne");
 const p2 = document.getElementById("playerTwo");
+const p1ScoreDisplay = document.getElementById("playerOneScore");
+const p2ScoreDisplay = document.getElementById("playerTwoScore");
+
+let p1Score = 0;
+let p2Score = 0;
+p2ScoreDisplay.textContent = p2Score;
+p1ScoreDisplay.textContent = p1Score;
 
 let p1Y = 300;
 let p2Y = 300;
@@ -18,8 +25,8 @@ p2.style.left = "750px";
 //Ball variables
 
 const ball = document.getElementById("ball");
-let ballX = 0;
-let ballY = 0;
+ballX = 350;
+ballY = 50;
 let ballXSpeed = 0;
 let ballYSpeed = 0;
 
@@ -64,8 +71,6 @@ function loop(){
         p2Y = 550;
     }
     
-    
-    
 
 
     if(ballY < 0 || ballY > 600 ){ ballYSpeed = -ballYSpeed};
@@ -76,7 +81,11 @@ function loop(){
         ballYSpeed *= 1.1;
     }
 
-    if(ballX < -50){ placeBall()};
+    if(ballX < -50){ 
+        p2Score++;
+        p2ScoreDisplay.textContent = p2Score;
+        placeBall();
+    };
 
 
     if( ballX > 700 && (ballX < 705 || ballX - 700 >= ballXSpeed-5)  && Math.abs(ballY - p2Y)<= 55){
@@ -85,7 +94,11 @@ function loop(){
         ballYSpeed *= 1.1;
     }
 
-    if(ballX > 750){ placeBall()};
+    if(ballX > 750){ 
+        p1Score++;
+        p1ScoreDisplay.textContent = p1Score;
+        placeBall();
+    };
 
     p1.style.top = p1Y-50+"px";
     p2.style.top = p2Y-50+"px";
@@ -98,9 +111,11 @@ loop();
 placeBall();
 
 function placeBall(){
+    ballXSpeed = 0;
+    ballYSpeed = 0;
     ballX = 350;
     ballY = 50;
-    ballXSpeed = 4 * (Math.random()*2); 
-    ballYSpeed = 4 * (Math.random()*2);
-    
+    setTimeout(function(){     
+        ballXSpeed = 4 * (Math.random()*2); 
+        ballYSpeed = 4 * (Math.random()*2); }, 2000);
 }

@@ -7,6 +7,20 @@ html{
 
 }
 
+.playerDisplay{
+    position: absolute;
+    top: 10%;
+    left: 32.5%;
+    width: 40%;
+    color: #fff;
+    z-index: 232;
+    font-size: 40px;
+}
+
+.playerScore{
+    padding: 2rem;
+}
+
 .full-board{
     background-color: black;
     width: 800px;
@@ -35,4 +49,5 @@ html{
     width: 10px;
     height: 10px;
     position: absolute;
+    z-index: 56656565;
 }
