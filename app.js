@@ -1,3 +1,8 @@
+//Game variables
+
+const welcomeMsgDisplay = document.getElementById("welcome-msg");
+
+
 //Player variables
 
 const p1 = document.getElementById("playerOne");
@@ -108,14 +113,23 @@ function loop(){
 }
 
 loop();
-placeBall();
 
-function placeBall(){
+
+function placeBall(time = 2000){
     ballXSpeed = 0;
     ballYSpeed = 0;
     ballX = 350;
     ballY = 50;
     setTimeout(function(){     
-        ballXSpeed = 4 * (Math.random()*2); 
-        ballYSpeed = 4 * (Math.random()*2); }, 2000);
+        ballXSpeed = (Math.random()*3+ 2) * (Math.round(Math.random()) * 2 - 1); 
+        ballYSpeed = (Math.random()*3+ 2) * (Math.round(Math.random()) * 2 - 1); 
+    },
+        time);
 }
+
+document.addEventListener('keyup', event => {
+    if (event.key === ' ') {
+        welcomeMsgDisplay.style.display = "none";
+        placeBall(0);
+    }
+  })
